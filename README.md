@@ -1,3 +1,3 @@
 # leetcode-go
 
-Leetcode go practice tasks
+This is not the best solutions ever, just practice
