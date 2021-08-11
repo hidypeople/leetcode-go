@@ -2,12 +2,12 @@ package tasks
 
 import ll "leetcode/linkedList"
 
-func MergeTwoLists(l1 *ll.ListNodeInt, l2 *ll.ListNodeInt) *ll.ListNodeInt {
-	var result *ll.ListNodeInt = nil
+func MergeTwoLists(l1 *ll.ListNode, l2 *ll.ListNode) *ll.ListNode {
+	var result *ll.ListNode = nil
 	curr1, curr2 := l1, l2
-	var curr *ll.ListNodeInt = nil
+	var curr *ll.ListNode = nil
 	for curr1 != nil || curr2 != nil {
-		var next *ll.ListNodeInt
+		var next *ll.ListNode
 		if curr1 == nil || (curr2 != nil && curr2.Val < curr1.Val) {
 			next = curr2
 			curr2 = curr2.Next

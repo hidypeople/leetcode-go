@@ -2,9 +2,9 @@ package tasks
 
 import ll "leetcode/linkedList"
 
-func AddTwoNumbers(l1 *ll.ListNodeInt, l2 *ll.ListNodeInt) *ll.ListNodeInt {
-	var root *ll.ListNodeInt = nil
-	var current *ll.ListNodeInt = nil
+func AddTwoNumbers(l1 *ll.ListNode, l2 *ll.ListNode) *ll.ListNode {
+	var root *ll.ListNode = nil
+	var current *ll.ListNode = nil
 	curr1, curr2 := l1, l2
 	var remain int = 0
 	for curr1 != nil || curr2 != nil {
@@ -19,7 +19,7 @@ func AddTwoNumbers(l1 *ll.ListNodeInt, l2 *ll.ListNodeInt) *ll.ListNodeInt {
 		}
 		remain = sum / 10
 
-		next := &ll.ListNodeInt{Val: sum % 10, Next: nil}
+		next := &ll.ListNode{Val: sum % 10, Next: nil}
 		if root == nil {
 			current, root = next, next
 		} else {
@@ -28,7 +28,7 @@ func AddTwoNumbers(l1 *ll.ListNodeInt, l2 *ll.ListNodeInt) *ll.ListNodeInt {
 		}
 	}
 	if remain > 0 {
-		current.Next = &ll.ListNodeInt{Val: remain, Next: nil}
+		current.Next = &ll.ListNode{Val: remain, Next: nil}
 	}
 	return root
 }
