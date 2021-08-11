@@ -1,10 +1,12 @@
 package tasks
 
-import ll "leetcode/linkedList"
+import . "leetcode/linkedList"
 
-func AddTwoNumbers(l1 *ll.ListNode, l2 *ll.ListNode) *ll.ListNode {
-	var root *ll.ListNode = nil
-	var current *ll.ListNode = nil
+// Add two numbers represened as linked lists
+// reversed: number 123 => linkedlist: 3->2->1)
+func AddTwoNumbers(l1 *ListNode, l2 *ListNode) *ListNode {
+	var root *ListNode = nil
+	var current *ListNode = nil
 	curr1, curr2 := l1, l2
 	var remain int = 0
 	for curr1 != nil || curr2 != nil {
@@ -19,7 +21,7 @@ func AddTwoNumbers(l1 *ll.ListNode, l2 *ll.ListNode) *ll.ListNode {
 		}
 		remain = sum / 10
 
-		next := &ll.ListNode{Val: sum % 10, Next: nil}
+		next := &ListNode{Val: sum % 10, Next: nil}
 		if root == nil {
 			current, root = next, next
 		} else {
@@ -28,7 +30,7 @@ func AddTwoNumbers(l1 *ll.ListNode, l2 *ll.ListNode) *ll.ListNode {
 		}
 	}
 	if remain > 0 {
-		current.Next = &ll.ListNode{Val: remain, Next: nil}
+		current.Next = &ListNode{Val: remain, Next: nil}
 	}
 	return root
 }

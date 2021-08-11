@@ -1,11 +1,11 @@
 package tasks
 
 import (
-	ll "leetcode/linkedList"
+	. "leetcode/linkedList"
 )
 
 // Is list node has cycle
-func HasCycle(head *ll.ListNode) bool {
+func HasCycle(head *ListNode) bool {
 	if head == nil || head.Next == nil {
 		return false
 	}

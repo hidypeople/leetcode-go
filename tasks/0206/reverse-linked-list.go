@@ -2,6 +2,7 @@ package tasks
 
 import . "leetcode/linkedList"
 
+// Reverse linked list
 func reverseList(head *ListNode) *ListNode {
 	if head == nil || head.Next == nil {
 		return head

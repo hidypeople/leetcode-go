@@ -2,6 +2,7 @@ package tasks
 
 import . "leetcode/linkedList"
 
+// Find middle node of linked list
 func middleNode(head *ListNode) *ListNode {
 	slow, fast := head, head
 	for fast != nil && fast.Next != nil {
