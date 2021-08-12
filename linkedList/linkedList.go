@@ -27,6 +27,22 @@ func LinkedListFromArray(arr []int) *ListNode {
 	return root
 }
 
+// Convert linked list to array
+func LinkedListToArray(list *ListNode) []int {
+	visited := make(map[*ListNode]bool)
+	result := []int{}
+	curr := list
+	for curr != nil {
+		visited[curr] = true
+		result = append(result, curr.Val)
+		curr = curr.Next
+		if curr != nil && visited[curr] {
+			break
+		}
+	}
+	return result
+}
+
 // Print single node
 func LinkedListPrintNode(node *ListNode) {
 	if node == nil {
