@@ -12,7 +12,7 @@ import (
 //   0 <= Node.val <= 9
 func IsPalindrome(head *ListNode) bool {
 	// get the middle point
-	middle := middleNode(head)
+	middle := middleNodePrev(head)
 
 	// Split list into two chains: left and right
 	left, right := middle, middle.Next
@@ -38,7 +38,7 @@ func IsPalindrome(head *ListNode) bool {
 }
 
 // Find middle node: [1,2,3,4] -> 2, [1,2,3,4,5] -> 3
-func middleNode(head *ListNode) *ListNode {
+func middleNodePrev(head *ListNode) *ListNode {
 	slow, fast := head, head
 	for fast != nil && fast.Next != nil {
 		fast = fast.Next.Next

@@ -14,9 +14,45 @@ import (
 //   The number of nodes in head is in the range [0, 2 * 104].
 //   -105 <= Node.val <= 105
 func SortedListToBST(head *ListNode) *TreeNode {
-	return &TreeNode{
-		Val:   head.Val,
-		Left:  nil,
+	if head == nil {
+		return nil
+	}
+	return processNode(head)
+}
+
+// Will do it recursively
+func processNode(head *ListNode) *TreeNode {
+	if head.Next == nil {
+		return &TreeNode{
+			Val:   head.Val,
+			Left:  nil,
+			Right: nil,
+		}
+	}
+
+	left := MiddleNodePrev(head)
+	middle := left.Next
+	right := middle.Next
+
+	left.Next = nil // cut off left tree
+
+	result := &TreeNode{
+		Val:   middle.Val,
+		Left:  processNode(head),
 		Right: nil,
 	}
+	if right != nil {
+		result.Right = processNode(right)
+	}
+	return result
+}
+
+// Find previous of middle node: [1,2,3,4] -> 2, [1,2,3,4,5] -> 2
+func MiddleNodePrev(head *ListNode) *ListNode {
+	slow, fast := head, head
+	for fast.Next != nil && fast.Next.Next != nil && fast.Next.Next.Next != nil {
+		slow = slow.Next
+		fast = fast.Next.Next
+	}
+	return slow
 }

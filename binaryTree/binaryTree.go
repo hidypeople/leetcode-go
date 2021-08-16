@@ -26,6 +26,21 @@ func BSTPrint(root *TreeNode) {
 	fmt.Println(printCurr(root, 0))
 }
 
+// Convert array into height balanced BST
+// [0, -3, 9, -10, nil, 5]
+// (level0: 0 -> level1: -3,9 -> level2: -10,nil,5):
+//           0
+//          / \
+//        -3   9
+//        /   /
+//      -10  5
+func BSTFromArray(arr []*int) *TreeNode {
+	if len(arr) == 0 {
+		return nil
+	}
+	return convertNode(arr, 0, 0)
+}
+
 func printCurr(node *TreeNode, level int) string {
 	var leftResult, rightResult string = "", ""
 	if node.Left != nil {
@@ -43,21 +58,6 @@ func printCurr(node *TreeNode, level int) string {
 	} else {
 		return fmt.Sprintf("%v", node.Val)
 	}
-}
-
-// Convert array into height balanced BST
-// [0, -3, 9, -10, nil, 5]
-// (level0: 0 -> level1: -3,9 -> level2: -10,nil,5):
-//           0
-//          / \
-//        -3   9
-//        /   /
-//      -10  5
-func BSTFromArray(arr []*int) *TreeNode {
-	if len(arr) == 0 {
-		return nil
-	}
-	return convertNode(arr, 0, 0)
 }
 
 func convertNode(arr []*int, i int, level int) *TreeNode {
