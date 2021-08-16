@@ -1,3 +1,3 @@
 # leetcode-go
 
-This is not the best solutions ever, just practice
+Here I'm solving leetcode problems using Go lang. This is my first Go lang experience, so I'll be very appreciative if you send PR or a message if you have something to improve
