@@ -13,7 +13,7 @@ func MiddleNode(head *ListNode) *ListNode {
 }
 
 // Find middle node: [1,2,3,4] -> 2, [1,2,3,4,5] -> 3
-func MiddleNodePrev(head *ListNode) *ListNode {
+func middleNodePrev(head *ListNode) *ListNode {
 	slow, fast := head, head
 	for fast != nil && fast.Next != nil {
 		fast = fast.Next.Next

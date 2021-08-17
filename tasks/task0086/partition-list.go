@@ -6,7 +6,7 @@ import . "leetcode/linkedList"
 // all nodes less than x come before nodes greater than or equal to x.
 // You should preserve the original relative order of the nodes in
 // each of the two partitions.
-func Partition(head *ListNode, x int) *ListNode {
+func partition(head *ListNode, x int) *ListNode {
 	fakeHead := &ListNode{
 		Val:  0,
 		Next: head,

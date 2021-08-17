@@ -3,7 +3,7 @@ package task0206
 import . "leetcode/linkedList"
 
 // Reverse linked list
-func ReverseList(head *ListNode) *ListNode {
+func reverseList(head *ListNode) *ListNode {
 	if head == nil || head.Next == nil {
 		return head
 	}

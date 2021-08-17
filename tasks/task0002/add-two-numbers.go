@@ -2,9 +2,20 @@ package task0002
 
 import . "leetcode/linkedList"
 
-// Add two numbers represened as linked lists
-// reversed: number 123 => linkedlist: 3->2->1)
-func AddTwoNumbers(l1 *ListNode, l2 *ListNode) *ListNode {
+// You are given two non-empty linked lists representing two non-negative integers. The digits
+// are stored in reverse order, and each of their nodes contains a single digit. Add the two
+// numbers and return the sum as a linked list.
+// You may assume the two numbers do not contain any leading zero, except the number 0 itself.
+//
+// Constraints:
+//   The number of nodes in each linked list is in the range [1, 100].
+//   0 <= Node.val <= 9
+//   It is guaranteed that the list represents a number that does not have leading zeros.
+//
+// Results:
+//   Runtime: 4 ms, faster than 98.33% of Go online submissions for Add Two Numbers.
+//   Memory Usage: 4.8 MB, less than 92.75% of Go online submissions for Add Two Numbers.
+func addTwoNumbers(l1 *ListNode, l2 *ListNode) *ListNode {
 	var root *ListNode = nil
 	var current *ListNode = nil
 	curr1, curr2 := l1, l2

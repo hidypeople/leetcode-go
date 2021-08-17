@@ -3,7 +3,7 @@ package task0023
 import . "leetcode/linkedList"
 
 // Merge list of ordered linked lists into one ordered list
-func MergeKLists(lists []*ListNode) *ListNode {
+func mergeKLists(lists []*ListNode) *ListNode {
 	n := len(lists)
 	var result, curr *ListNode = nil, nil
 	currValue := 100000

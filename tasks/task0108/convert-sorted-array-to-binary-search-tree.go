@@ -16,7 +16,7 @@ type Slice struct {
 //   1 <= nums.length <= 104
 //   -104 <= nums[i] <= 104
 //   nums is sorted in a strictly increasing order.
-func SortedArrayToBST(nums []int) *TreeNode {
+func sortedArrayToBST(nums []int) *TreeNode {
 	// We'll solve it using queue (also it is possible to use recursive function calls)
 	slice := Slice{
 		0,

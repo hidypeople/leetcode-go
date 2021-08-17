@@ -13,7 +13,7 @@ import (
 // Constraints:
 //   The number of nodes in head is in the range [0, 2 * 104].
 //   -105 <= Node.val <= 105
-func SortedListToBST(head *ListNode) *TreeNode {
+func sortedListToBST(head *ListNode) *TreeNode {
 	if head == nil {
 		return nil
 	}

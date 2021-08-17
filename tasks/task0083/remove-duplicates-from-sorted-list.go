@@ -4,7 +4,7 @@ import . "leetcode/linkedList"
 
 // Given the head of a sorted linked list, delete all duplicates
 // such that each element appears only once. Return the linked list sorted as well.
-func DeleteDuplicates(head *ListNode) *ListNode {
+func deleteDuplicates(head *ListNode) *ListNode {
 	// This node will never go into the result.
 	// It is used for easier nil handling
 	result := &ListNode{

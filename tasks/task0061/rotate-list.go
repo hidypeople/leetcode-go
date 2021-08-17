@@ -5,7 +5,7 @@ import (
 )
 
 //Given the head of a linked list, rotate the list to the right by k places.
-func RotateRight(head *ListNode, k int) *ListNode {
+func rotateRight(head *ListNode, k int) *ListNode {
 	if head == nil {
 		return nil
 	}

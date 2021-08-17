@@ -3,7 +3,7 @@ package task0021
 import . "leetcode/linkedList"
 
 // Merge two ordered sorted lists into one ordered sorted list
-func MergeTwoLists(l1 *ListNode, l2 *ListNode) *ListNode {
+func mergeTwoLists(l1 *ListNode, l2 *ListNode) *ListNode {
 	var result *ListNode = nil
 	curr1, curr2 := l1, l2
 	var curr *ListNode = nil

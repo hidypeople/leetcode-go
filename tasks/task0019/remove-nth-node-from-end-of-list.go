@@ -6,7 +6,7 @@ import (
 
 // Given the head of a linked list, remove the n-th node from the
 // end of the list and return its head.
-func RemoveNthFromEnd(head *ListNode, n int) *ListNode {
+func removeNthFromEnd(head *ListNode, n int) *ListNode {
 	if head == nil || head.Next == nil {
 		return nil
 	}

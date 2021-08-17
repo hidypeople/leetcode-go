@@ -5,7 +5,7 @@ import (
 )
 
 // Is list node has cycle
-func HasCycle(head *ListNode) bool {
+func hasCycle(head *ListNode) bool {
 	if head == nil || head.Next == nil {
 		return false
 	}

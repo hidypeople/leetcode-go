@@ -2,7 +2,7 @@ package task0189
 
 // Given an array, rotate the array to the right by k steps, where k is non-negative.
 // Could you do it in-place with O(1) extra space?
-func Rotate(nums []int, k int) {
+func rotate(nums []int, k int) {
 	n := len(nums)
 	if k == 0 || k == n {
 		return

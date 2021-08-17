@@ -11,13 +11,13 @@ import (
 
 func TestSortedListToBST(t *testing.T) {
 	list := BSTFromArray([]*int{I(0), I(-10), I(10), I(-50), I(-5), I(5), I(50)})
-	result := SortedListToBST(linkedList.LinkedListFromArray([]int{-50, -10, -5, 0, 5, 10, 50}))
+	result := sortedListToBST(linkedList.LinkedListFromArray([]int{-50, -10, -5, 0, 5, 10, 50}))
 	assert.Equal(t, list, result)
 }
 
 func TestSortedListToBST2(t *testing.T) {
 	list := BSTFromArray([]*int{I(5), I(-10), I(15), I(-100), I(0), I(10), nil})
-	result := SortedListToBST(linkedList.LinkedListFromArray([]int{-100, -10, 0, 5, 10, 15}))
+	result := sortedListToBST(linkedList.LinkedListFromArray([]int{-100, -10, 0, 5, 10, 15}))
 	assert.Equal(t, list, result)
 }
 

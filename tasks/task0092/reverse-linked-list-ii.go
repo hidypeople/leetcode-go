@@ -4,7 +4,7 @@ import . "leetcode/linkedList"
 
 //Given the head of a singly linked list and two integers left and right where left <= right,
 //reverse the nodes of the list from position left to position right, and return the reversed list.
-func ReverseBetween(head *ListNode, left int, right int) *ListNode {
+func reverseBetween(head *ListNode, left int, right int) *ListNode {
 	if left == right {
 		return head
 	}

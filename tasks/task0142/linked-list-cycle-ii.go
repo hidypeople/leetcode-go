@@ -3,7 +3,7 @@ package task0142
 import . "leetcode/linkedList"
 
 // Find the node that starts the cycle
-func DetectCycle(head *ListNode) *ListNode {
+func detectCycle(head *ListNode) *ListNode {
 	if head == nil || head.Next == nil {
 		return nil
 	}
