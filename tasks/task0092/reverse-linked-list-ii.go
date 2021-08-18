@@ -4,6 +4,16 @@ import . "leetcode/linkedList"
 
 //Given the head of a singly linked list and two integers left and right where left <= right,
 //reverse the nodes of the list from position left to position right, and return the reversed list.
+//
+// Constraints:
+//   The number of nodes in the list is n.
+//   1 <= n <= 500
+//   -500 <= Node.val <= 500
+//   1 <= left <= right <= n
+//
+// Results:
+//   Runtime: 0 ms, faster than 100.00% of Go online submissions for Reverse Linked List II.
+//   Memory Usage: 2.1 MB, less than 25.06% of Go online submissions for Reverse Linked List II.
 func reverseBetween(head *ListNode, left int, right int) *ListNode {
 	if left == right {
 		return head

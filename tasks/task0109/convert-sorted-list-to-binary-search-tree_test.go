@@ -23,17 +23,17 @@ func TestSortedListToBST2(t *testing.T) {
 
 func TestMiddleNodePrev(t *testing.T) {
 	list0 := LinkedListFromArray([]int{1})
-	assert.Equal(t, 1, MiddleNodePrev(list0).Val)
+	assert.Equal(t, 1, middleNodePrev(list0).Val)
 
 	list := LinkedListFromArray([]int{-3, -2, -1, 0, 1, 2, 3})
-	assert.Equal(t, -1, MiddleNodePrev(list).Val)
+	assert.Equal(t, -1, middleNodePrev(list).Val)
 
 	list2 := LinkedListFromArray([]int{-3, -2, -1, 1, 2, 3})
-	assert.Equal(t, -1, MiddleNodePrev(list2).Val)
+	assert.Equal(t, -1, middleNodePrev(list2).Val)
 
 	list3 := LinkedListFromArray([]int{-3, -2})
-	assert.Equal(t, -3, MiddleNodePrev(list3).Val)
+	assert.Equal(t, -3, middleNodePrev(list3).Val)
 
 	list4 := LinkedListFromArray([]int{-3, -2, -1})
-	assert.Equal(t, -3, MiddleNodePrev(list4).Val)
+	assert.Equal(t, -3, middleNodePrev(list4).Val)
 }

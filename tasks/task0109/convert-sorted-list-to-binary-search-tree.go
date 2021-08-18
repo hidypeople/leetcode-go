@@ -11,8 +11,12 @@ import (
 // which the depth of the two subtrees of every node never differ by more than 1.
 //
 // Constraints:
-//   The number of nodes in head is in the range [0, 2 * 104].
-//   -105 <= Node.val <= 105
+//   The number of nodes in head is in the range [0, 2 * 10^4].
+//   -10^5 <= Node.val <= 10^5
+//
+// Results:
+//   Runtime: 4 ms, faster than 99.07% of Go online submissions for Convert Sorted List to Binary Search Tree.
+//   Memory Usage: 5.9 MB, less than 100.00% of Go online submissions for Convert Sorted List to Binary Search Tree.
 func sortedListToBST(head *ListNode) *TreeNode {
 	if head == nil {
 		return nil
@@ -30,7 +34,7 @@ func processNode(head *ListNode) *TreeNode {
 		}
 	}
 
-	left := MiddleNodePrev(head)
+	left := middleNodePrev(head)
 	middle := left.Next
 	right := middle.Next
 
@@ -48,7 +52,7 @@ func processNode(head *ListNode) *TreeNode {
 }
 
 // Find previous of middle node: [1,2,3,4] -> 2, [1,2,3,4,5] -> 2
-func MiddleNodePrev(head *ListNode) *ListNode {
+func middleNodePrev(head *ListNode) *ListNode {
 	slow, fast := head, head
 	for fast.Next != nil && fast.Next.Next != nil && fast.Next.Next.Next != nil {
 		slow = slow.Next

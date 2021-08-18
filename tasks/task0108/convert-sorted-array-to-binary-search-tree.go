@@ -16,6 +16,10 @@ type Slice struct {
 //   1 <= nums.length <= 104
 //   -104 <= nums[i] <= 104
 //   nums is sorted in a strictly increasing order.
+//
+// Results:
+//   Runtime: 0 ms, faster than 100.00% of Go online submissions for Convert Sorted Array to Binary Search Tree.
+//   Memory Usage: 4.1 MB, less than 28.33% of Go online submissions for Convert Sorted Array to Binary Search Tree.
 func sortedArrayToBST(nums []int) *TreeNode {
 	// We'll solve it using queue (also it is possible to use recursive function calls)
 	slice := Slice{

@@ -5,9 +5,14 @@ import (
 )
 
 // Given the head of a singly linked list, return true if it is a palindrome.
+//
 // Constraints:
 //   The number of nodes in the list is in the range [1, 105].
 //   0 <= Node.val <= 9
+//
+// Results:
+//   Runtime: 148 ms, faster than 87.03% of Go online submissions for Palindrome Linked List.
+//   Memory Usage: 11.4 MB, less than 19.92% of Go online submissions for Palindrome Linked List.
 func isPalindrome(head *ListNode) bool {
 	// get the middle point
 	middle := middleNodePrev(head)

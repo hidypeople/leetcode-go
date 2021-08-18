@@ -9,10 +9,15 @@ import . "leetcode/binaryTree"
 // Given a binary tree root, a node X in the tree is named good if in the path
 // from root to X there are no nodes with a value greater than X.
 // Return the number of good nodes in the binary tree.
+//
 // Constraints:
 //   The number of nodes in the binary tree is in the range [1, 10^5].
 //   Each node's value is between [-10^4, 10^4].
-func GoodNodes(root *TreeNode) int {
+//
+// Results:
+//   Runtime: 88 ms, faster than 66.04% of Go online submissions for Count Good Nodes in Binary Tree.
+//   Memory Usage: 10.9 MB, less than 32.08% of Go online submissions for Count Good Nodes in Binary Tree.
+func goodNodes(root *TreeNode) int {
 	return goodNodesCurrent(root, root.Val)
 }
 
@@ -41,7 +46,7 @@ type NodeAndLevel struct {
 	maxVal int
 }
 
-func Max(a, b int) int {
+func max(a, b int) int {
 	if a > b {
 		return a
 	}
@@ -54,7 +59,7 @@ func Max(a, b int) int {
 // Constraints:
 //   The number of nodes in the binary tree is in the range [1, 10^5].
 //   Each node's value is between [-10^4, 10^4].
-func GoodNodes_NoRecursion(root *TreeNode) int {
+func goodNodes_NoRecursion(root *TreeNode) int {
 	result := 1
 	queue := []NodeAndLevel{
 		{root, root.Val},
@@ -71,7 +76,7 @@ func GoodNodes_NoRecursion(root *TreeNode) int {
 				queue,
 				NodeAndLevel{
 					current.node.Left,
-					Max(current.maxVal, current.node.Left.Val),
+					max(current.maxVal, current.node.Left.Val),
 				})
 		}
 		if current.node.Right != nil {
@@ -83,7 +88,7 @@ func GoodNodes_NoRecursion(root *TreeNode) int {
 				queue,
 				NodeAndLevel{
 					current.node.Right,
-					Max(current.maxVal, current.node.Right.Val),
+					max(current.maxVal, current.node.Right.Val),
 				})
 		}
 	}

@@ -2,7 +2,20 @@ package task0023
 
 import . "leetcode/linkedList"
 
-// Merge list of ordered linked lists into one ordered list
+// You are given an array of k linked-lists lists, each linked-list is sorted in ascending order.
+// Merge all the linked-lists into one sorted linked-list and return it.
+//
+// Constraints:
+//   k == lists.length
+//   0 <= k <= 10^4
+//   0 <= lists[i].length <= 500
+//   -10^4 <= lists[i][j] <= 10^4
+//   lists[i] is sorted in ascending order.
+//   The sum of lists[i].length won't exceed 10^4.
+//
+// Results:
+//   Runtime: 32 ms, faster than 36.97% of Go online submissions for Merge k Sorted Lists.
+//   Memory Usage: 5.8 MB, less than 40.72% of Go online submissions for Merge k Sorted Lists.
 func mergeKLists(lists []*ListNode) *ListNode {
 	n := len(lists)
 	var result, curr *ListNode = nil, nil

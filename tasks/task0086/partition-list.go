@@ -6,6 +6,15 @@ import . "leetcode/linkedList"
 // all nodes less than x come before nodes greater than or equal to x.
 // You should preserve the original relative order of the nodes in
 // each of the two partitions.
+//
+// Constraints:
+//   The number of nodes in the list is in the range [0, 200].
+//   -100 <= Node.val <= 100
+//   -200 <= x <= 200
+//
+// Results:
+//   Runtime: 0 ms, faster than 100.00% of Go online submissions for Partition List.
+//   Memory Usage: 2.5 MB, less than 100.00% of Go online submissions for Partition List.
 func partition(head *ListNode, x int) *ListNode {
 	fakeHead := &ListNode{
 		Val:  0,
