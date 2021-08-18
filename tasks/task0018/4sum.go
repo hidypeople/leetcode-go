@@ -41,30 +41,25 @@ func fourSum(nums []int, target int) [][]int {
 					right2--
 				} else {
 					results = append(results, []int{nums[left], nums[left2], nums[right2], nums[right]})
-					left2 = skipSameValsLtr(nums, left2, true)
-					right2 = skipSameValsRtl(nums, right2, false)
+					left2++
+					for left2 < n-2 && nums[left2] == nums[left2-1] {
+						left2++
+					}
+					right2--
+					for right2 > 1 && nums[right2] == nums[right2+1] {
+						right2--
+					}
 				}
 			}
-			right = skipSameValsRtl(nums, right, false)
+			right--
+			for right > 2 && nums[right] == nums[right+1] {
+				right--
+			}
 		}
-		left = skipSameValsLtr(nums, left, true)
+		left++
+		for left < n-3 && nums[left] == nums[left-1] {
+			left++
+		}
 	}
 	return results
-}
-
-func skipSameValsLtr(nums []int, startIndex int, ltr bool) int {
-	prevValue := nums[startIndex]
-	i := startIndex + 1
-	for i < len(nums) && nums[i] == prevValue {
-		i++
-	}
-	return i
-}
-func skipSameValsRtl(nums []int, startIndex int, ltr bool) int {
-	prevValue := nums[startIndex]
-	i := startIndex - 1
-	for i > 0 && nums[i] == prevValue {
-		i--
-	}
-	return i
 }
