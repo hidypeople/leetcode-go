@@ -24,7 +24,7 @@ func reverseKGroup(head *ListNode, k int) *ListNode {
 		Val:  0,
 		Next: head,
 	}
-	currentHead, current, firstInCurrentGroup := fakeHead, head, head
+	currentHead, current, firstInGroup := fakeHead, head, head
 	i := 0
 	for current != nil {
 		if i < k-1 {
@@ -36,16 +36,16 @@ func reverseKGroup(head *ListNode, k int) *ListNode {
 			// revert the whole group and update glue everything back:
 			// [... -> currentHead -> ... group... -> tail -> ...]
 			//   =>
-			// [... -> currentHead -> ... reverse(group) ... -> tail -> ...]
-			lastInCurrentGroup := current
+			// [... -> ... reverse(group) (currentHead points on last group element) ... -> firstInGroup -> ...]
+			lastInGroup := current
 			tail := current.Next
-			lastInCurrentGroup.Next = nil
-			reverseList(firstInCurrentGroup)
-			currentHead.Next = lastInCurrentGroup
-			firstInCurrentGroup.Next = tail
-			currentHead = firstInCurrentGroup
+			lastInGroup.Next = nil
+			reverseList(firstInGroup)
+			currentHead.Next = lastInGroup
+			firstInGroup.Next = tail
+			currentHead = firstInGroup
 			current = tail
-			firstInCurrentGroup = tail
+			firstInGroup = tail
 			i = 0
 		}
 	}
