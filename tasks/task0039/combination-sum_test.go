@@ -8,7 +8,7 @@ import (
 
 func Test_combinationSum(t *testing.T) {
 	result := combinationSum([]int{2, 3, 5}, 8)
-	assert.Equal(t, [][]int{{2, 2, 2, 2}, {2, 3, 3}, {3, 5}}, result)
+	assert.Equal(t, [][]int{{2, 2, 2, 2}, {3, 3, 2}, {5, 3}}, result)
 }
 
 func Test_combinationSum2(t *testing.T) {
@@ -23,7 +23,7 @@ func Test_combinationSum3(t *testing.T) {
 
 func Test_combinationSum4(t *testing.T) {
 	result := combinationSum([]int{2, 3, 6, 7}, 7)
-	assert.Equal(t, [][]int{{2, 2, 3}, {7}}, result)
+	assert.Equal(t, [][]int{{3, 2, 2}, {7}}, result)
 }
 
 func Test_combinationSum5(t *testing.T) {
