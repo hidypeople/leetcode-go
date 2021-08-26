@@ -87,19 +87,34 @@ func saveMarkdown(markdown string) {
 
 // Generate markdown for task results
 func buildMarkdownTable(taskResults []*TaskPerformanceResult) string {
+
+	percentMarkdown := func(val float32) string {
+		color := "#000"
+		if val < 50 {
+			color = "#f00"
+		} else if val >= 50 && val < 80 {
+			color = "orange"
+		} else if val >= 80 && val < 90 {
+			color = "yellow"
+		} else {
+			color = "green"
+		}
+		return fmt.Sprintf("<span style=\"color:%v\">> %v%%</span>", color, val)
+	}
+
 	builder := new(strings.Builder)
 	builder.WriteString("#task id | task name | cpu (ms) | cpu (better than) | memory (mBytes) | memory (better than)\n")
 	builder.WriteString("--- | --- | --- | --- | --- | ---\n")
 	for _, taskResult := range taskResults {
 		builder.WriteString(fmt.Sprintf(
-			"%v | [%v](https://leetcode.com/problems/%v/) | %vms | >%v%% | %vmB | >%v%%\n",
+			"%v | [%v](https://leetcode.com/problems/%v/) | %vms | %v | %vmB | %v\n",
 			taskResult.taskId,
 			taskResult.taskName,
 			taskResult.taskUrlName,
 			taskResult.resultCpuMs,
-			taskResult.resultCpuPercent,
+			percentMarkdown(taskResult.resultCpuPercent),
 			taskResult.resultMem,
-			taskResult.resultMemoryPercent,
+			percentMarkdown(taskResult.resultMemoryPercent),
 		))
 	}
 	return builder.String()
