@@ -42,6 +42,7 @@
 41 | [First Missing Positive](https://leetcode.com/problems/first-missing-positive/) | 116ms | <span style="color:yellow">> 84.7%</span> | 25.2mB | <span style="color:orange">> 50.18%</span>
 42 | [Trapping Rain Water](https://leetcode.com/problems/trapping-rain-water/) | 4ms | <span style="color:yellow">> 84.15%</span> | 3.6mB | <span style="color:#f00">> 14.52%</span>
 43 | [Multiply Strings](https://leetcode.com/problems/multiply-strings/) | 0ms | <span style="color:green">> 100%</span> | 5.9mB | <span style="color:#f00">> 31.49%</span>
+45 | [Jump Game II](https://leetcode.com/problems/jump-game-ii/) | 8ms | <span style="color:green">> 99.42%</span> | 6.1mB | <span style="color:#f00">> 49.85%</span>
 61 | [Rotate List](https://leetcode.com/problems/rotate-list/) | 0ms | <span style="color:green">> 100%</span> | 2.6mB | <span style="color:#f00">> 29%</span>
 82 | [Remove Duplicates from Sorted List II](https://leetcode.com/problems/remove-duplicates-from-sorted-list-ii/) | 0ms | <span style="color:green">> 100%</span> | 3.1mB | <span style="color:green">> 100%</span>
 83 | [Remove Duplicates from Sorted List](https://leetcode.com/problems/remove-duplicates-from-sorted-list/) | 4ms | <span style="color:yellow">> 80.59%</span> | 3.2mB | <span style="color:green">> 100%</span>
