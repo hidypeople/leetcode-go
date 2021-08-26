@@ -26,6 +26,10 @@ import (
 //
 //Constraints:
 //  1 <= num <= 3999
+//
+// Results:
+//   Runtime: 4 ms, faster than 92.66% of Go online submissions for Integer to Roman.
+//   Memory Usage: 3.3 MB, less than 86.31% of Go online submissions for Integer to Roman.
 func intToRoman(num int) string {
 	type RomanLitera struct {
 		integerVal int
