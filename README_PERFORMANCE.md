@@ -1,9 +1,3 @@
-# leetcode-go
-
-Here I'm solving leetcode problems using Go lang. This is my first Go lang experience, so I'll be very appreciative if you send PR or a message if you have something to improve
-
-## Performance table
-
 #task id | task name | cpu (ms) | cpu (better than) | memory (mBytes) | memory (better than)
 --- | --- | --- | --- | --- | ---
 1 | [Two Sum](https://leetcode.com/problems/two-sum/) | 4ms | >97.43% | 4.2mB | >61.84%
@@ -66,3 +60,4 @@ Here I'm solving leetcode problems using Go lang. This is my first Go lang exper
 633 | [Sum of Square Numbers](https://leetcode.com/problems/sum-of-square-numbers/) | 0ms | >100% | 2mB | >57.14%
 876 | [Middle of the Linked List](https://leetcode.com/problems/middle-of-the-linked-list/) | 0ms | >100% | 2mB | >11.59%
 1448 | [Count Good Nodes in Binary Tree](https://leetcode.com/problems/count-good-nodes-in-binary-tree/) | 88ms | >66.04% | 10.9mB | >32.08%
+

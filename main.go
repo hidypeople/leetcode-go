@@ -1,9 +1,20 @@
 package main
 
-// import (
-// 	task "leetcode/tasks/0019"
-// )
+import (
+	"flag"
+	"fmt"
+	buildTools "leetcode/buildTools"
+)
 
 func main() {
-	// task.Tests()
+	buildPtr := flag.String("build", "performance-table", "a string")
+	flag.Parse()
+
+	// performance table build
+	fmt.Println("build: ", *buildPtr)
+	switch *buildPtr {
+	case "performance-table":
+		buildTools.BuildPerformanceTable()
+	default:
+	}
 }
