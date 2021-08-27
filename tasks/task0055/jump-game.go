@@ -9,8 +9,8 @@ package task0055
 //   0 <= nums[i] <= 10^5
 //
 // Results:
-//   Runtime: 60 ms, faster than 69.36% of Go online submissions for Jump Game.
-//   Memory Usage: 7 MB, less than 85.71% of Go online submissions for Jump Game.
+//   Runtime: 56 ms, faster than 92.67% of Go online submissions for Jump Game. *Unstable*
+//   Memory Usage: 7.1 MB, less than 85.71% of Go online submissions for Jump Game.
 func canJump(nums []int) bool {
 	n := len(nums)
 	if n < 2 {

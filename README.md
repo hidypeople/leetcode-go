@@ -51,7 +51,7 @@ Performance results of algorithms table
 42 | [Trapping Rain Water](https://leetcode.com/problems/trapping-rain-water/) | 4ms | <span style="color:yellow">> 84.15%</span> | 3.6mB | <span style="color:#f00">> 14.52%</span>
 43 | [Multiply Strings](https://leetcode.com/problems/multiply-strings/) | 0ms | <span style="color:green">> 100%</span> | 5.9mB | <span style="color:#f00">> 31.49%</span>
 45 | [Jump Game II](https://leetcode.com/problems/jump-game-ii/) | 8ms | <span style="color:green">> 99.42%</span> | 6.1mB | <span style="color:#f00">> 49.85%</span>
-55 | [Jump Game](https://leetcode.com/problems/jump-game/) | 60ms | <span style="color:orange">> 69.36%</span> | 7mB | <span style="color:yellow">> 85.71%</span>
+55 | [Jump Game](https://leetcode.com/problems/jump-game/) | 56ms | <span style="color:green">> 92.67%</span>[*](#performanceFootnote) | 7.1mB | <span style="color:yellow">> 85.71%</span>
 61 | [Rotate List](https://leetcode.com/problems/rotate-list/) | 0ms | <span style="color:green">> 100%</span> | 2.6mB | <span style="color:#f00">> 29%</span>
 82 | [Remove Duplicates from Sorted List II](https://leetcode.com/problems/remove-duplicates-from-sorted-list-ii/) | 0ms | <span style="color:green">> 100%</span> | 3.1mB | <span style="color:green">> 100%</span>
 83 | [Remove Duplicates from Sorted List](https://leetcode.com/problems/remove-duplicates-from-sorted-list/) | 4ms | <span style="color:yellow">> 80.59%</span> | 3.2mB | <span style="color:green">> 100%</span>
@@ -70,5 +70,8 @@ Performance results of algorithms table
 633 | [Sum of Square Numbers](https://leetcode.com/problems/sum-of-square-numbers/) | 0ms | <span style="color:green">> 100%</span> | 2mB | <span style="color:orange">> 57.14%</span>
 876 | [Middle of the Linked List](https://leetcode.com/problems/middle-of-the-linked-list/) | 0ms | <span style="color:green">> 100%</span> | 2mB | <span style="color:#f00">> 11.59%</span>
 1448 | [Count Good Nodes in Binary Tree](https://leetcode.com/problems/count-good-nodes-in-binary-tree/) | 88ms | <span style="color:orange">> 66.04%</span> | 10.9mB | <span style="color:#f00">> 32.08%</span>
+
+
+<a href="#performanceFootnote">*</a> Result is unstable (shows different result for each run).
 
 
