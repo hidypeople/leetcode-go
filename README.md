@@ -73,6 +73,7 @@ Performance results of algorithms table
 522 | [Longest Uncommon Subsequence II](https://leetcode.com/problems/longest-uncommon-subsequence-ii/) | 0ms | <span style="color:green">> 100%</span> | 2.3mB | <span style="color:#f00">> 14.29%</span>
 633 | [Sum of Square Numbers](https://leetcode.com/problems/sum-of-square-numbers/) | 0ms | <span style="color:green">> 100%</span> | 2mB | <span style="color:orange">> 57.14%</span>
 876 | [Middle of the Linked List](https://leetcode.com/problems/middle-of-the-linked-list/) | 0ms | <span style="color:green">> 100%</span> | 2mB | <span style="color:#f00">> 11.59%</span>
+996 | [Number of Squareful Arrays](https://leetcode.com/problems/number-of-squareful-arrays/) | 0ms | <span style="color:green">> 100%</span> | 2.1mB | <span style="color:orange">> 71.43%</span>
 1448 | [Count Good Nodes in Binary Tree](https://leetcode.com/problems/count-good-nodes-in-binary-tree/) | 88ms | <span style="color:orange">> 66.04%</span> | 10.9mB | <span style="color:#f00">> 32.08%</span>
 
 ---
