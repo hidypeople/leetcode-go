@@ -67,6 +67,7 @@ Performance results of algorithms table
 226 | [Invert Binary Tree](https://leetcode.com/problems/invert-binary-tree/) | 0ms | <span style="color:green">> 100%</span> | 2.1mB | <span style="color:orange">> 50.25%</span>
 234 | [Palindrome Linked List](https://leetcode.com/problems/palindrome-linked-list/) | 148ms | <span style="color:yellow">> 87.03%</span> | 11.4mB | <span style="color:#f00">> 19.92%</span>
 278 | [First Bad Version](https://leetcode.com/problems/first-bad-version/) | 0ms | <span style="color:green">> 100%</span> | 1.9mB | <span style="color:#f00">> 30.5%</span>
+331 | [Verify Preorder Serialization of a Binary Tree](https://leetcode.com/problems/verify-preorder-serialization-of-a-binary-tree/) | 0ms | <span style="color:green">> 100%</span> | 2.8mB | <span style="color:yellow">> 84%</span>
 633 | [Sum of Square Numbers](https://leetcode.com/problems/sum-of-square-numbers/) | 0ms | <span style="color:green">> 100%</span> | 2mB | <span style="color:orange">> 57.14%</span>
 876 | [Middle of the Linked List](https://leetcode.com/problems/middle-of-the-linked-list/) | 0ms | <span style="color:green">> 100%</span> | 2mB | <span style="color:#f00">> 11.59%</span>
 1448 | [Count Good Nodes in Binary Tree](https://leetcode.com/problems/count-good-nodes-in-binary-tree/) | 88ms | <span style="color:orange">> 66.04%</span> | 10.9mB | <span style="color:#f00">> 32.08%</span>
