@@ -51,6 +51,8 @@ Performance results of algorithms table
 42 | [Trapping Rain Water](https://leetcode.com/problems/trapping-rain-water/) | 4ms | <span style="color:yellow">> 84.15%</span> | 3.6mB | <span style="color:#f00">> 14.52%</span>
 43 | [Multiply Strings](https://leetcode.com/problems/multiply-strings/) | 0ms | <span style="color:green">> 100%</span> | 5.9mB | <span style="color:#f00">> 31.49%</span>
 45 | [Jump Game II](https://leetcode.com/problems/jump-game-ii/) | 8ms | <span style="color:green">> 99.42%</span> | 6.1mB | <span style="color:#f00">> 49.85%</span>
+46 | [Permutations](https://leetcode.com/problems/permutations/) | 0ms | <span style="color:green">> 100%</span> | 3.5mB | <span style="color:#f00">> 6.58%</span>
+47 | [Permutations II](https://leetcode.com/problems/permutations-ii/) | 4ms | <span style="color:yellow">> 89.41%</span> [*](#performanceFootnote) | 6.4mB | <span style="color:#f00">> 19.41%</span>
 55 | [Jump Game](https://leetcode.com/problems/jump-game/) | 56ms | <span style="color:green">> 92.67%</span> [*](#performanceFootnote) | 7.1mB | <span style="color:yellow">> 85.71%</span>
 61 | [Rotate List](https://leetcode.com/problems/rotate-list/) | 0ms | <span style="color:green">> 100%</span> | 2.6mB | <span style="color:#f00">> 29%</span>
 82 | [Remove Duplicates from Sorted List II](https://leetcode.com/problems/remove-duplicates-from-sorted-list-ii/) | 0ms | <span style="color:green">> 100%</span> | 3.1mB | <span style="color:green">> 100%</span>
