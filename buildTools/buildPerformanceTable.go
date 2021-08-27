@@ -110,7 +110,7 @@ func buildMarkdownTable(taskResults []*TaskPerformanceResult) string {
 	for _, taskResult := range taskResults {
 		unstableSign := ""
 		if taskResult.resultCpuIsUnstable {
-			unstableSign = "[*](#performanceFootnote)"
+			unstableSign = " [*](#performanceFootnote)"
 		}
 		builder.WriteString(fmt.Sprintf(
 			"%v | [%v](https://leetcode.com/problems/%v/) | %vms | %v%v | %vmB | %v\n",
