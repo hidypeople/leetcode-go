@@ -60,6 +60,7 @@ Performance results of algorithms table
 83 | [Remove Duplicates from Sorted List](https://leetcode.com/problems/remove-duplicates-from-sorted-list/) | 4ms | <span style="color:yellow">> 80.59%</span> | 3.2mB | <span style="color:green">> 100%</span>
 86 | [Partition List](https://leetcode.com/problems/partition-list/) | 0ms | <span style="color:green">> 100%</span> | 2.5mB | <span style="color:green">> 100%</span>
 92 | [Reverse Linked List II](https://leetcode.com/problems/reverse-linked-list-ii/) | 0ms | <span style="color:green">> 100%</span> | 2.1mB | <span style="color:#f00">> 25.06%</span>
+94 | [Binary Tree Inorder Traversal](https://leetcode.com/problems/binary-tree-inorder-traversal/) | 0ms | <span style="color:green">> 100%</span> | 2.1mB | <span style="color:green">> 99.63%</span>
 108 | [Convert Sorted Array to Binary Search Tree](https://leetcode.com/problems/convert-sorted-array-to-binary-search-tree/) | 0ms | <span style="color:green">> 100%</span> | 4.1mB | <span style="color:#f00">> 28.33%</span>
 109 | [Convert Sorted List to Binary Search Tree](https://leetcode.com/problems/convert-sorted-list-to-binary-search-tree/) | 4ms | <span style="color:green">> 99.07%</span> | 5.9mB | <span style="color:green">> 100%</span>
 141 | [Linked List Cycle](https://leetcode.com/problems/linked-list-cycle/) | 8ms | <span style="color:yellow">> 88.4%</span> | 4.4mB | <span style="color:green">> 100%</span>
