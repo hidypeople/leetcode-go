@@ -20,6 +20,5 @@ func isSameTree(p *TreeNode, q *TreeNode) bool {
 		return false
 	}
 
-	// Мы знаем что p и q не пустые
 	return p.Val == q.Val && isSameTree(p.Left, q.Left) && isSameTree(p.Right, q.Right)
 }

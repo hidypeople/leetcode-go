@@ -54,6 +54,7 @@
 92 | [Reverse Linked List II](https://leetcode.com/problems/reverse-linked-list-ii/) | 0ms | <span style="color:green">> 100%</span> | 2.1mB | <span style="color:#f00">> 25.06%</span>
 94 | [Binary Tree Inorder Traversal](https://leetcode.com/problems/binary-tree-inorder-traversal/) | 0ms | <span style="color:green">> 100%</span> | 2.1mB | <span style="color:green">> 99.63%</span>
 100 | [Same Tree](https://leetcode.com/problems/same-tree/) | 0ms | <span style="color:green">> 100%</span> | 2.1mB | <span style="color:#f00">> 20.08%</span>
+101 | [Symmetric Tree](https://leetcode.com/problems/symmetric-tree/) | 0ms | <span style="color:green">> 100%</span> | 2.9mB | <span style="color:#f00">> 38.33%</span>
 108 | [Convert Sorted Array to Binary Search Tree](https://leetcode.com/problems/convert-sorted-array-to-binary-search-tree/) | 0ms | <span style="color:green">> 100%</span> | 4.1mB | <span style="color:#f00">> 28.33%</span>
 109 | [Convert Sorted List to Binary Search Tree](https://leetcode.com/problems/convert-sorted-list-to-binary-search-tree/) | 4ms | <span style="color:green">> 99.07%</span> | 5.9mB | <span style="color:green">> 100%</span>
 141 | [Linked List Cycle](https://leetcode.com/problems/linked-list-cycle/) | 8ms | <span style="color:yellow">> 88.4%</span> | 4.4mB | <span style="color:green">> 100%</span>
