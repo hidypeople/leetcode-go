@@ -24,6 +24,8 @@ type TaskPerformanceResult struct {
 	taskName string
 	// leetcode task url name
 	taskUrlName string
+	// Link to file
+	taskFileUrl string
 	// Result milliseconds
 	resultCpuMs int
 	// "better than" cpu result
@@ -113,8 +115,9 @@ func buildMarkdownTable(taskResults []*TaskPerformanceResult) string {
 			unstableSign = " [*](#performanceFootnote)"
 		}
 		builder.WriteString(fmt.Sprintf(
-			"%v | [%v](https://leetcode.com/problems/%v/) | %vms | %v%v | %vmB | %v\n",
+			"[%v](%v) | [%v](https://leetcode.com/problems/%v/) | %vms | %v%v | %vmB | %v\n",
 			taskResult.taskId,
+			taskResult.taskFileUrl,
 			taskResult.taskName,
 			taskResult.taskUrlName,
 			taskResult.resultCpuMs,
@@ -151,6 +154,7 @@ func processTaskDirectory(taskDir fs.FileInfo) *TaskPerformanceResult {
 			return nil
 		}
 		result.taskId = taskId
+		result.taskFileUrl = dir + "/" + goFileName
 		printPerformanceResult(result)
 		return result
 	}
