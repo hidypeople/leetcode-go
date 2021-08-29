@@ -107,18 +107,18 @@ func buildMarkdownTable(taskResults []*TaskPerformanceResult) string {
 	}
 
 	builder := new(strings.Builder)
-	builder.WriteString("#task id | task name | cpu (ms) | cpu (better than) | memory (mBytes) | memory (better than)\n")
-	builder.WriteString("--- | --- | --- | --- | --- | ---\n")
+	builder.WriteString("#task id | task name | leetcode | cpu (ms) | cpu (better than) | memory (mBytes) | memory (better than)\n")
+	builder.WriteString("--- | --- | --- | --- | --- | --- | ---\n")
 	for _, taskResult := range taskResults {
 		unstableSign := ""
 		if taskResult.resultCpuIsUnstable {
 			unstableSign = " [*](#performanceFootnote)"
 		}
 		builder.WriteString(fmt.Sprintf(
-			"[%v](%v) | [%v](https://leetcode.com/problems/%v/) | %vms | %v%v | %vmB | %v\n",
+			"%v | [%v](%v) | [leetcode](https://leetcode.com/problems/%v/) | %vms | %v%v | %vmB | %v\n",
 			taskResult.taskId,
-			taskResult.taskFileUrl,
 			taskResult.taskName,
+			taskResult.taskFileUrl,
 			taskResult.taskUrlName,
 			taskResult.resultCpuMs,
 			percentMarkdown(taskResult.resultCpuPercent),
