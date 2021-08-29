@@ -46,6 +46,7 @@
 46 | [Permutations](https://leetcode.com/problems/permutations/) | 0ms | <span style="color:green">> 100%</span> | 3.5mB | <span style="color:#f00">> 6.58%</span>
 47 | [Permutations II](https://leetcode.com/problems/permutations-ii/) | 4ms | <span style="color:yellow">> 89.41%</span> [*](#performanceFootnote) | 6.4mB | <span style="color:#f00">> 19.41%</span>
 55 | [Jump Game](https://leetcode.com/problems/jump-game/) | 56ms | <span style="color:green">> 92.67%</span> [*](#performanceFootnote) | 7.1mB | <span style="color:yellow">> 85.71%</span>
+60 | [Permutation Sequence](https://leetcode.com/problems/permutation-sequence/) | 0ms | <span style="color:green">> 100%</span> | 2.2mB | <span style="color:#f00">> 27.27%</span>
 61 | [Rotate List](https://leetcode.com/problems/rotate-list/) | 0ms | <span style="color:green">> 100%</span> | 2.6mB | <span style="color:#f00">> 29%</span>
 82 | [Remove Duplicates from Sorted List II](https://leetcode.com/problems/remove-duplicates-from-sorted-list-ii/) | 0ms | <span style="color:green">> 100%</span> | 3.1mB | <span style="color:green">> 100%</span>
 83 | [Remove Duplicates from Sorted List](https://leetcode.com/problems/remove-duplicates-from-sorted-list/) | 4ms | <span style="color:yellow">> 80.59%</span> | 3.2mB | <span style="color:green">> 100%</span>
@@ -68,4 +69,5 @@
 876 | [Middle of the Linked List](https://leetcode.com/problems/middle-of-the-linked-list/) | 0ms | <span style="color:green">> 100%</span> | 2mB | <span style="color:#f00">> 11.59%</span>
 996 | [Number of Squareful Arrays](https://leetcode.com/problems/number-of-squareful-arrays/) | 0ms | <span style="color:green">> 100%</span> | 2.1mB | <span style="color:orange">> 71.43%</span>
 1448 | [Count Good Nodes in Binary Tree](https://leetcode.com/problems/count-good-nodes-in-binary-tree/) | 88ms | <span style="color:orange">> 66.04%</span> | 10.9mB | <span style="color:#f00">> 32.08%</span>
+1734 | [Decode XORed Permutation](https://leetcode.com/problems/decode-xored-permutation/) | 156ms | <span style="color:green">> 100%</span> | 10mB | <span style="color:#f00">> 37.5%</span>
 
