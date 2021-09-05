@@ -28,9 +28,12 @@ func isMatch(s string, p string) bool {
 			is++
 			ip++
 		} else if asterisk >= 0 {
-			// If we are in the asterisk zone (but chars are not matching):
-			// 1. We need to move forward on the "s" string
-			// 2. We need to reset P to the next of asterisk character
+			// If characters aren't match:
+			// 1. Rollback to the last asterisk state
+			// 2. Continue moving here until we meet another one asterisk or string will start matching again
+
+			// s = "abcabcd", p = "*abcd" => when we meet second "abc" - string stops matching:
+			// and we come here and star skipping chars until we'll come to the second abc
 			match++
 			is = match
 			ip = asterisk + 1
