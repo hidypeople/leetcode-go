@@ -49,6 +49,7 @@
 49 | [Group Anagrams](./tasks/task0049/group-anagrams.go) | [leetcode](https://leetcode.com/problems/group-anagrams/) | 16ms | <span style="color:green">> 98.96%</span> [*](#performanceFootnote) | 7mB | <span style="color:green">> 99.16%</span>
 50 | [Pow(x, n)](./tasks/task0050/powx-n.go) | [leetcode](https://leetcode.com/problems/powx-n/) | 0ms | <span style="color:green">> 100%</span> | 2.2mB | <span style="color:#f00">> 5.88%</span>
 51 | [N-Queens](./tasks/task0051/n-queens.go) | [leetcode](https://leetcode.com/problems/n-queens/) | 3ms | <span style="color:yellow">> 87.5%</span> | 6.6mB | <span style="color:#f00">> 13.33%</span>
+52 | [N-Queens II](./tasks/task0052/n-queens-ii.go) | [leetcode](https://leetcode.com/problems/n-queens-ii/) | 0ms | <span style="color:green">> 100%</span> | 6.3mB | <span style="color:#f00">> 5.17%</span>
 53 | [Maximum Subarray](./tasks/task0053/maximum-subarray.go) | [leetcode](https://leetcode.com/problems/maximum-subarray/) | 4ms | <span style="color:green">> 94.12%</span> | 3.2mB | <span style="color:#f00">> 38.74%</span>
 54 | [Spiral Matrix](./tasks/task0054/spiral-matrix.go) | [leetcode](https://leetcode.com/problems/spiral-matrix/) | 0ms | <span style="color:green">> 100%</span> | 2mB | <span style="color:green">> 100%</span>
 55 | [Jump Game](./tasks/task0055/jump-game.go) | [leetcode](https://leetcode.com/problems/jump-game/) | 56ms | <span style="color:green">> 92.67%</span> [*](#performanceFootnote) | 7.1mB | <span style="color:yellow">> 85.71%</span>
