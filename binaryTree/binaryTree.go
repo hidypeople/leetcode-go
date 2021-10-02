@@ -17,13 +17,17 @@ type TreeNode struct {
 	Right *TreeNode
 }
 
+// BST to string
+func BSTToString(root *TreeNode) string {
+	if root == nil {
+		return "<nil>"
+	}
+	return printCurr(root, 0)
+}
+
 // Print tree
 func BSTPrint(root *TreeNode) {
-	if root == nil {
-		fmt.Printf("<nil>\n")
-		return
-	}
-	fmt.Println(printCurr(root, 0))
+	fmt.Println(BSTToString(root))
 }
 
 // Convert array into height balanced BST

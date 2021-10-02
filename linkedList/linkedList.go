@@ -43,6 +43,15 @@ func LinkedListToArray(list *ListNode) []int {
 	return result
 }
 
+// List of nodes to array
+func LinkedListsToArray(lists []*ListNode) [][]int {
+	result := [][]int{}
+	for _, list := range lists {
+		result = append(result, LinkedListToArray(list))
+	}
+	return result
+}
+
 // Print single node
 func LinkedListPrintNode(node *ListNode) {
 	if node == nil {
