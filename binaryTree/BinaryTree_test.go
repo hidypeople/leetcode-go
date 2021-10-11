@@ -87,3 +87,7 @@ func TestBSTFromArray6(t *testing.T) {
 	assert.Equal(t, 4, result.Right.Left.Right.Val)
 	assert.Equal(t, 3, result.Right.Right.Val)
 }
+
+func Test_morris(t *testing.T) {
+	morrisTraversalExample(nil)
+}

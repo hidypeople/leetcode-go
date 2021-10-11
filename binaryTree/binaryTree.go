@@ -5,6 +5,8 @@ import (
 	mathInt "leetcode/mathInt"
 )
 
+var NULL = -1 << 63
+
 // Convert int -> *int
 func I(val int) *int {
 	return &val
@@ -81,4 +83,85 @@ func convertNode(arr []*int, i int, level int) *TreeNode {
 		result.Right = convertNode(arr, rightIndex, level+1)
 	}
 	return result
+}
+
+func BSTFromArrayInts(ints []int) *TreeNode {
+	n := len(ints)
+	if n == 0 {
+		return nil
+	}
+
+	root := &TreeNode{
+		Val: ints[0],
+	}
+
+	queue := make([]*TreeNode, 1, n*2)
+	queue[0] = root
+
+	i := 1
+	for i < n {
+		node := queue[0]
+		queue = queue[1:]
+
+		if i < n && ints[i] != NULL {
+			node.Left = &TreeNode{Val: ints[i]}
+			queue = append(queue, node.Left)
+		}
+		i++
+
+		if i < n && ints[i] != NULL {
+			node.Right = &TreeNode{Val: ints[i]}
+			queue = append(queue, node.Right)
+		}
+		i++
+	}
+
+	return root
+}
+
+// Traverse through the binary tree without recursion
+func morrisTraversalExample(root *TreeNode) {
+	// Morris traversal algorithm:
+	// https://en.wikipedia.org/wiki/Tree_traversal#Morris_in-order_traversal_using_threading
+
+	var current *TreeNode
+
+	for root != nil {
+		if root.Left != nil {
+			// Look into left branch
+			current = root.Left
+
+			// Try to go right as deep as we can
+			// If current tree branch has already been threaded: it will stop on the pre-root item,
+			// otherwise it will stop on the deepest right leaf
+			for current.Right != nil && current.Right != root {
+				current = current.Right
+			}
+
+			if current.Right != nil {
+				// Thread exist (current.Right == root):
+				// break the thread and return go to the root.Right
+				current.Right = nil
+
+				// Do the logic:
+				// println(root.Val)
+
+				root = root.Right
+			} else {
+				// Make thread from the deepest right node to the current root
+				// For BST: [..., current.Val, root.Val, ...]
+				current.Right = root
+
+				// Go to the left
+				root = root.Left
+			}
+		} else {
+
+			// Do the logic:
+			// println(root.Val)
+
+			// Go to the right
+			root = root.Right
+		}
+	}
 }
