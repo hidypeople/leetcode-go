@@ -3,10 +3,10 @@ package buildtools
 import (
 	"bufio"
 	"fmt"
-	"io/fs"
 	"io/ioutil"
 	"log"
 	"os"
+	"path"
 	"regexp"
 	"strconv"
 	"strings"
@@ -44,32 +44,39 @@ type TaskPerformanceResult struct {
 // 1 | 2 | <span style="color:green">95%</span> | <span style="color:orange">60%</span>
 func BuildPerformanceTable() string {
 	fmt.Println("[buildtools] Make performance table...")
-	files, err := ioutil.ReadDir(ROOT_DIR)
-	if err != nil {
-		log.Fatal(err)
-		return ""
-	}
-
 	// scan for tasks
-	taskResults := []*TaskPerformanceResult{}
-	for _, taskDir := range files {
-		fmt.Printf("%v...", taskDir.Name())
-
-		// Read eqch task dir and extract performance results
-		if taskDir.IsDir() {
-			if performanceResult := processTaskDirectory(taskDir); performanceResult != nil {
-				taskResults = append(taskResults, performanceResult)
-			}
-		}
-		fmt.Printf("DONE\n")
-
-	}
+	taskResults := readDir(ROOT_DIR)
+	fmt.Printf("[buildtools] All tasks were read (%v)\n", len(taskResults))
 
 	// Build markdown
+	fmt.Println("[buildtools] Build markdown")
 	result := buildMarkdownTable(taskResults)
 	saveMarkdown(result)
-	fmt.Println("[buildtools] Make performance table... Done")
+	fmt.Println("[buildtools] Make performance markdown... Done")
 	return result
+}
+
+// Scan directory and subdirectories for "taskXXXX" folders and extract task info from those folders
+func readDir(parentDirectory string) []*TaskPerformanceResult {
+	files, err := ioutil.ReadDir(parentDirectory)
+	if err != nil {
+		log.Fatal(err)
+		return nil
+	}
+	taskResults := []*TaskPerformanceResult{}
+	for _, file := range files {
+		if file.IsDir() {
+			dirName := file.Name()
+			if strings.HasPrefix(dirName, "task") {
+				if performanceResult := processTaskDirectory(parentDirectory, dirName); performanceResult != nil {
+					taskResults = append(taskResults, performanceResult)
+				}
+			} else {
+				taskResults = append(taskResults, readDir(path.Join(parentDirectory, dirName))...)
+			}
+		}
+	}
+	return taskResults
 }
 
 func check(e error) {
@@ -131,9 +138,9 @@ func buildMarkdownTable(taskResults []*TaskPerformanceResult) string {
 }
 
 // Process task directory: find source files and parse the cpu and memory results
-func processTaskDirectory(taskDir fs.FileInfo) *TaskPerformanceResult {
-	dir := ROOT_DIR + "/" + taskDir.Name()
-	taskId, err := strconv.Atoi(taskDir.Name()[4:])
+func processTaskDirectory(rootDir, taskDir string) *TaskPerformanceResult {
+	dir := rootDir + "/" + taskDir
+	taskId, err := strconv.Atoi(taskDir[4:])
 	if err != nil {
 		log.Fatal(err)
 		return nil
