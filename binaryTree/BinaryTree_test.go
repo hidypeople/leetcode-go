@@ -91,3 +91,37 @@ func TestBSTFromArray6(t *testing.T) {
 func Test_morris(t *testing.T) {
 	morrisTraversalExample(nil)
 }
+
+func Test_BSTFromArrayInts(t *testing.T) {
+	tree := BSTFromArrayInts([]int{1, 2, 3})
+	assert.Equal(t, 1, tree.Val)
+	assert.Equal(t, 2, tree.Left.Val)
+	assert.Equal(t, 3, tree.Right.Val)
+}
+
+func Test_BSTFromArrayInts2(t *testing.T) {
+	tree := BSTFromArrayInts([]int{1, 2, 3, NULL, 100})
+	assert.Nil(t, tree.Left.Left)
+	assert.NotNil(t, tree.Left.Right)
+	assert.Equal(t, 100, tree.Left.Right.Val)
+}
+
+func Test_BSTFromArrayInts3(t *testing.T) {
+	tree := BSTFromArrayInts([]int{1, 2, NULL, NULL, 200, 2000, 3000})
+	assert.Equal(t, 200, tree.Left.Right.Val)
+	assert.Equal(t, 2000, tree.Left.Right.Left.Val)
+	assert.Equal(t, 3000, tree.Left.Right.Right.Val)
+}
+
+func Test_BSTToArrayInts(t *testing.T) {
+	var input []int
+
+	input = []int{1, 2, 3}
+	assert.Equal(t, input, BSTToArrayInts(BSTFromArrayInts(input)))
+
+	input = []int{1, 2, 3, NULL, 100}
+	assert.Equal(t, input, BSTToArrayInts(BSTFromArrayInts(input)))
+
+	input = []int{1, 2, NULL, NULL, 200, 2000, 3000}
+	assert.Equal(t, input, BSTToArrayInts(BSTFromArrayInts(input)))
+}

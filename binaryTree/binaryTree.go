@@ -85,6 +85,7 @@ func convertNode(arr []*int, i int, level int) *TreeNode {
 	return result
 }
 
+// Transorm array into binary tree, the empty children are NULL
 func BSTFromArrayInts(ints []int) *TreeNode {
 	n := len(ints)
 	if n == 0 {
@@ -119,7 +120,32 @@ func BSTFromArrayInts(ints []int) *TreeNode {
 	return root
 }
 
-// Traverse through the binary tree without recursion
+// Transform binary tree to array of ints, the empty children will be NULL
+func BSTToArrayInts(root *TreeNode) []int {
+	res := make([]int, 0, 1024)
+	queue := []*TreeNode{root}
+	for len(queue) > 0 {
+		size := len(queue)
+		for i := 0; i < size; i++ {
+			nd := queue[i]
+			if nd == nil {
+				res = append(res, NULL)
+			} else {
+				res = append(res, nd.Val)
+				queue = append(queue, nd.Left, nd.Right)
+			}
+		}
+		queue = queue[size:]
+	}
+
+	i := len(res)
+	for i > 0 && res[i-1] == NULL {
+		i--
+	}
+	return res[:i]
+}
+
+// Traverse through the binary tree without recursion example
 func morrisTraversalExample(root *TreeNode) {
 	// Morris traversal algorithm:
 	// https://en.wikipedia.org/wiki/Tree_traversal#Morris_in-order_traversal_using_threading
