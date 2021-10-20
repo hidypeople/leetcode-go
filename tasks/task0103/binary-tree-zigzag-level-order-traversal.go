@@ -9,8 +9,9 @@ import . "leetcode/binaryTree"
 //   The number of nodes in the tree is in the range [0, 2000].
 //   -100 <= Node.val <= 100
 //
-// Runtime: 0 ms, faster than 100.00% of Go online submissions for Binary Tree Zigzag Level Order Traversal.
-// Memory Usage: 2.7 MB, less than 56.28% of Go online submissions for Binary Tree Zigzag Level Order Traversal.
+// Results:
+//   Runtime: 0 ms, faster than 100.00% of Go online submissions for Binary Tree Zigzag Level Order Traversal.
+//   Memory Usage: 2.7 MB, less than 56.28% of Go online submissions for Binary Tree Zigzag Level Order Traversal.
 func zigzagLevelOrder(root *TreeNode) [][]int {
 	if root == nil {
 		return [][]int{}
