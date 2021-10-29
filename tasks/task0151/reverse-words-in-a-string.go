@@ -13,8 +13,9 @@ package task0151
 // s contains English letters (upper-case and lower-case), digits, and spaces ' '.
 // There is at least one word in s.
 //
-// Runtime: 0 ms, faster than 100.00% of Go online submissions for Reverse Words in a String.
-// Memory Usage: 7.9 MB, less than 14.47% of Go online submissions for Reverse Words in a String.
+// Results:
+//   Runtime: 0 ms, faster than 100.00% of Go online submissions for Reverse Words in a String.
+//   Memory Usage: 7.9 MB, less than 14.47% of Go online submissions for Reverse Words in a String.
 func reverseWords(s string) string {
 	words := []string{}
 	wordStartIdx := -1
