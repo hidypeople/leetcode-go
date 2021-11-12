@@ -12,7 +12,7 @@ import . "leetcode/linkedList"
 //   0 <= val <= 50
 //
 // Results:
-//   Runtime: 8 ms, faster than 86.15% of Go online submissions for Remove Linked List Elements.
+//   Runtime: 4 ms, faster than 98.80% of Go online submissions for Remove Linked List Elements.
 //   Memory Usage: 4.7 MB, less than 100.00% of Go online submissions for Remove Linked List Elements.
 func removeElements(head *ListNode, val int) *ListNode {
 	// First fake element needed to handle nil results
