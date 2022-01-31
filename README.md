@@ -242,6 +242,7 @@ Performance results of algorithms table
 1446 | [Consecutive Characters](./tasks/task1446/consecutive-characters.go) | [leetcode](https://leetcode.com/problems/consecutive-characters/) | 0ms | <span style="color:green">> 100%</span> | 2.3mB | <span style="color:#f00">> 38.71%</span>
 1448 | [Count Good Nodes in Binary Tree](./tasks/task1448/count-good-nodes-in-binary-tree.go) | [leetcode](https://leetcode.com/problems/count-good-nodes-in-binary-tree/) | 88ms | <span style="color:orange">> 66.04%</span> | 10.9mB | <span style="color:#f00">> 32.08%</span>
 1510 | [Stone Game IV](./tasks/task1510/stone-game-iv.go) | [leetcode](https://leetcode.com/problems/stone-game-iv/) | 4ms | <span style="color:green">> 100%</span> | 3.3mB | <span style="color:orange">> 77.78%</span>
+1672 | [Richest Customer Wealth](./tasks/task1672/richest-customer-wealth.go) | [leetcode](https://leetcode.com/problems/richest-customer-wealth/) | 2ms | <span style="color:green">> 94.53%</span> | 3.1mB | <span style="color:green">> 99.5%</span>
 1734 | [Decode XORed Permutation](./tasks/task1734/decode-xored-permutation.go) | [leetcode](https://leetcode.com/problems/decode-xored-permutation/) | 156ms | <span style="color:green">> 100%</span> | 10mB | <span style="color:#f00">> 37.5%</span>
 
 ---
