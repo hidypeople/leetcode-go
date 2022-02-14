@@ -13,13 +13,16 @@ import (
 )
 
 const ROOT_DIR = "./tasks"
-const PREFIX_CPU = "//   Runtime"
-const PREFIX_MEMORY = "//   Memory"
+
+var PREFIXES_CPU []string
+var PREFIXES_MEMORY []string
 
 // Task performance result struct
 type TaskPerformanceResult struct {
 	// leetcode task id
 	taskId int
+	// language
+	lang string
 	// leetcode task name
 	taskName string
 	// leetcode task url name
@@ -39,10 +42,13 @@ type TaskPerformanceResult struct {
 }
 
 // Build markdown for performance results
-// #number | name | cpu scrore | memory score
-// --- | --- | --- | ---
-// 1 | 2 | <span style="color:green">95%</span> | <span style="color:orange">60%</span>
+// #number | name | cpu scrore                           | memory score
+// ---     | ---  | ---                                  | ---
+// 1       | 2    | <span style="color:green">95%</span> | <span style="color:orange">60%</span>
 func BuildPerformanceTable() string {
+	PREFIXES_CPU = []string{"//   Runtime", "--   Runtime"}
+	PREFIXES_MEMORY = []string{"//   Memory"}
+
 	fmt.Println("[buildtools] Make performance table...")
 	// scan for tasks
 	taskResults := readDir(ROOT_DIR)
@@ -114,16 +120,17 @@ func buildMarkdownTable(taskResults []*TaskPerformanceResult) string {
 	}
 
 	builder := new(strings.Builder)
-	builder.WriteString("#task id | task name | leetcode | cpu (ms) | cpu (better than) | memory (mBytes) | memory (better than)\n")
-	builder.WriteString("--- | --- | --- | --- | --- | --- | ---\n")
+	builder.WriteString("#task id | lang | task name | leetcode | cpu (ms) | cpu (better than) | memory (mBytes) | memory (better than)\n")
+	builder.WriteString("--- | --- | --- | --- | --- | --- | --- | ---\n")
 	for _, taskResult := range taskResults {
 		unstableSign := ""
 		if taskResult.resultCpuIsUnstable {
 			unstableSign = " [*](#performanceFootnote)"
 		}
 		builder.WriteString(fmt.Sprintf(
-			"%v | [%v](%v) | [leetcode](https://leetcode.com/problems/%v/) | %vms | %v%v | %vmB | %v\n",
+			"%v | %v | [%v](%v) | [leetcode](https://leetcode.com/problems/%v/) | %vms | %v%v | %vmB | %v\n",
 			taskResult.taskId,
+			taskResult.lang,
 			taskResult.taskName,
 			taskResult.taskFileUrl,
 			taskResult.taskUrlName,
@@ -169,7 +176,7 @@ func processTaskDirectory(rootDir, taskDir string) *TaskPerformanceResult {
 }
 
 func printPerformanceResult(p *TaskPerformanceResult) {
-	fmt.Printf("id='%v', url='%v', name='%v', cpu=(%vms, >%v%%, u=%v), mem=(%vMb, >%v%%) \n", p.taskId, p.taskUrlName, p.taskName, p.resultCpuMs, p.resultCpuPercent, p.resultCpuIsUnstable, p.resultMem, p.resultMemoryPercent)
+	fmt.Printf("id='%v', lang='%v', url='%v', name='%v', cpu=(%vms, >%v%%, u=%v), mem=(%vMb, >%v%%) \n", p.taskId, p.lang, p.taskUrlName, p.taskName, p.resultCpuMs, p.resultCpuPercent, p.resultCpuIsUnstable, p.resultMem, p.resultMemoryPercent)
 }
 
 // Read single task file
@@ -203,21 +210,36 @@ func readTaskFile(goFileName, goOnlyFileName string) *TaskPerformanceResult {
 		text := scanner.Text()
 
 		// Read CPU results
-		if strings.HasPrefix(text, PREFIX_CPU) {
+		hasCpuPrefix := false
+		for _, prefix := range PREFIXES_CPU {
+			if strings.HasPrefix(text, prefix) {
+				hasCpuPrefix = true
+				break
+			}
+		}
+		if hasCpuPrefix {
 			doneCpu = true
-			milliseconds, percent, isUnstable, taskName, errCpu := parseCpuString(text)
+			milliseconds, percent, lang, isUnstable, taskName, errCpu := parseCpuString(text)
 			if errCpu != nil {
 				log.Fatal(errCpu)
 				continue
 			}
 			result.taskName = taskName
+			result.lang = lang
 			result.resultCpuMs = milliseconds
 			result.resultCpuPercent = percent
 			result.resultCpuIsUnstable = isUnstable
 		}
 
 		// Read Memory results
-		if strings.HasPrefix(text, PREFIX_MEMORY) {
+		hasMemPrefix := false
+		for _, prefix := range PREFIXES_MEMORY {
+			if strings.HasPrefix(text, prefix) {
+				hasMemPrefix = true
+				break
+			}
+		}
+		if hasMemPrefix {
 			doneMem = true
 			mBytes, percent, errMem := parseMemString(text)
 			if errMem != nil {
@@ -237,24 +259,24 @@ func readTaskFile(goFileName, goOnlyFileName string) *TaskPerformanceResult {
 }
 
 // Parse string "//   Runtime: 4 ms, faster than 98.33% of Go online submissions for Add Two Numbers."
-func parseCpuString(s string) (milliseconds int, percent float32, isUnstable bool, taskName string, err error) {
-	re := regexp.MustCompile(`^//\s*Runtime:\s*(?P<milliseconds>\d+)\s*ms, faster than (?P<percent>\d+\.*\d*)% of Go online submissions for (?P<name>.*)\..*?(?P<unstable>\*Unstable\*|)$`)
+func parseCpuString(s string) (milliseconds int, percent float32, lang string, isUnstable bool, taskName string, err error) {
+	re := regexp.MustCompile(`^[/\-][/\-]\s*Runtime:\s*(?P<milliseconds>\d+)\s*ms, faster than (?P<percent>\d+\.*\d*)% of (?P<lang>.*?) online submissions for (?P<name>.*)\..*?(?P<unstable>\*Unstable\*|)$`)
 	subNames := re.FindSubmatch([]byte(s))
 	msResult, err := strconv.Atoi(string(subNames[1]))
 	if err != nil {
-		return 0, 0.0, false, "", err
+		return 0, 0.0, "", false, "", err
 	}
 	percentResult, err2 := strconv.ParseFloat(string(subNames[2]), 32)
 	if err2 != nil {
-		return 0, 0.0, false, "", err2
+		return 0, 0.0, "", false, "", err2
 	}
-	unstableResult := subNames[4]
-	return msResult, float32(percentResult), len(unstableResult) > 0, string(subNames[3]), nil
+	unstableResult := subNames[5]
+	return msResult, float32(percentResult), string(subNames[3]), len(unstableResult) > 0, string(subNames[4]), nil
 }
 
 // Parse string ""//   Memory Usage: 4.2 MB, less than 61.84% of Go online submissions for Two Sum.""
 func parseMemString(s string) (mBytes float32, percent float32, err error) {
-	re := regexp.MustCompile(`//\s*Memory Usage:\s*(?P<mbytes>\d+\.{0,1}\d*)\s*MB, less than (?P<percent>\d+\.{0,1}\d*)%.*`)
+	re := regexp.MustCompile(`[/\-][/\-]\s*Memory Usage:\s*(?P<mbytes>\d+\.{0,1}\d*)\s*MB, less than (?P<percent>\d+\.{0,1}\d*)%.*`)
 	subNames := re.FindSubmatch([]byte(s))
 	mBytesResult, err := strconv.ParseFloat(string(subNames[1]), 32)
 	if err != nil {
