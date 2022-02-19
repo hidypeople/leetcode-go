@@ -88,10 +88,6 @@ func TestBSTFromArray6(t *testing.T) {
 	assert.Equal(t, 3, result.Right.Right.Val)
 }
 
-func Test_morris(t *testing.T) {
-	morrisTraversalExample(nil)
-}
-
 func Test_BSTFromArrayInts(t *testing.T) {
 	tree := BSTFromArrayInts([]int{1, 2, 3})
 	assert.Equal(t, 1, tree.Val)

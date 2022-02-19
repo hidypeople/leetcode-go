@@ -146,7 +146,7 @@ func BSTToArrayInts(root *TreeNode) []int {
 }
 
 // Traverse through the binary tree without recursion example
-func morrisTraversalExample(root *TreeNode) {
+func BSTPrintSortedArray(root *TreeNode) {
 	// Morris traversal algorithm:
 	// https://en.wikipedia.org/wiki/Tree_traversal#Morris_in-order_traversal_using_threading
 
@@ -170,7 +170,7 @@ func morrisTraversalExample(root *TreeNode) {
 				current.Right = nil
 
 				// Do the logic:
-				// println(root.Val)
+				print(root.Val, " ")
 
 				root = root.Right
 			} else {
@@ -184,10 +184,11 @@ func morrisTraversalExample(root *TreeNode) {
 		} else {
 
 			// Do the logic:
-			// println(root.Val)
+			print(root.Val, " ")
 
 			// Go to the right
 			root = root.Right
 		}
 	}
+	println()
 }
