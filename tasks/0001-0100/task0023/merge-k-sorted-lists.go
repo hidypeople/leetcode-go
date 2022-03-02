@@ -14,50 +14,39 @@ import . "leetcode/linkedList"
 //   The sum of lists[i].length won't exceed 10^4.
 //
 // Results:
-//   Runtime: 32 ms, faster than 36.97% of Go online submissions for Merge k Sorted Lists.
-//   Memory Usage: 5.8 MB, less than 40.72% of Go online submissions for Merge k Sorted Lists.
+//   Runtime: 8 ms, faster than 92.45% of Go online submissions for Merge k Sorted Lists.
+//   Memory Usage: 5.2 MB, less than 100.00% of Go online submissions for Merge k Sorted Lists.
 func mergeKLists(lists []*ListNode) *ListNode {
-	n := len(lists)
-	var result, curr *ListNode = nil, nil
-	currValue := 100000
-	currents := make([]*ListNode, n)
-	copy(currents, lists)
-	for len(currents) > 0 {
-		next, nextIndex := findMinCurrent(currents, currValue)
-		currValue = next.Val
-		currents[nextIndex] = currents[nextIndex].Next
-		if currents[nextIndex] == nil {
-			currents = fastRemove(currents, nextIndex)
-		}
-		if result == nil {
-			result, curr = next, next
+	if len(lists) == 2 {
+		return mergeList(lists[0], lists[1])
+	} else if len(lists) == 1 {
+		return lists[0]
+	} else if len(lists) == 0 {
+		return nil
+	}
+	median := len(lists) / 2
+	return mergeList(mergeKLists(lists[:median]), mergeKLists(lists[median:]))
+}
+
+// Merge 2 lists
+func mergeList(list1, list2 *ListNode) *ListNode {
+	beforeFirstNode := &ListNode{}
+	current := beforeFirstNode
+	for list1 != nil && list2 != nil {
+		if list2.Val < list1.Val {
+			current.Next = list2
+			list2 = list2.Next
+			current = current.Next
 		} else {
-			curr.Next = next
-			curr = next
+			current.Next = list1
+			list1 = list1.Next
+			current = current.Next
 		}
 	}
-	return result
-}
-
-// Fast remove element without keeping the order
-func fastRemove(nodes []*ListNode, i int) []*ListNode {
-	nodes[i] = nodes[len(nodes)-1]
-	return nodes[:len(nodes)-1]
-}
-
-// Find minimum value withing given nodes (currVal used as early exit optimization)
-func findMinCurrent(nodes []*ListNode, currVal int) (*ListNode, int) {
-	var minNode *ListNode = nil
-	var minIndex int = -1
-	for i := 0; i < len(nodes); i++ {
-		if i == 0 || nodes[i].Val < minNode.Val {
-			minNode = nodes[i]
-			minIndex = i
-			// Fast return
-			if minNode.Val == currVal {
-				return minNode, minIndex
-			}
-		}
+	if list1 == nil {
+		current.Next = list2
+	} else {
+		current.Next = list1
 	}
-	return minNode, minIndex
+	return beforeFirstNode.Next
 }
