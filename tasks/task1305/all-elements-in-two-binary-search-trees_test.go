@@ -1,7 +1,7 @@
 package task1305
 
 import (
-	. "leetcode/binarytree"
+	. "leetcode/binaryTree"
 	"testing"
 
 	"github.com/stretchr/testify/assert"
